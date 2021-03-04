@@ -6,12 +6,8 @@ import VerifiedImage from '../../assets/images/verified.png';
 import UnverifiedImage from '../../assets/images/unverified.png';
 
 export default function Security(props) {
-    const [user, setUser] = useState({
-        verification_status: false,
-        photoUrl: "https://hatrabbits.com/wp-content/uploads/2017/01/random.jpg"
-    });
+    const [user, setUser] = useState();
     const [scanning, setScanning] = useState(false);
-    const canvasContainerRef = useRef();
 
     function getScannedData(data) {
         setScanning(false);
@@ -22,7 +18,7 @@ export default function Security(props) {
         })
         .then(res => res.json())
         .then(data => {
-            console.log(data);
+            setUser(data);
         })
         .catch(err => console.log(err));
     }
@@ -31,8 +27,8 @@ export default function Security(props) {
         if (user) {
             return (
                 <div class="status_container">
-                    <span>{user.verification_status ? "Vaccine verified" : "Not verified"}</span>
-                    <img id="verify_image" src={user.verification_status ? VerifiedImage : UnverifiedImage} />
+                    <span>{user.vaccine_verified ? "Vaccine verified" : "Not verified"}</span>
+                    <img id="verify_image" src={user.vaccine_verified ? VerifiedImage : UnverifiedImage} />
                 </div>
             );
         }
@@ -59,7 +55,7 @@ export default function Security(props) {
                     </div>
                     <div id="photo_id_container">
                         <div id="dummy"></div>
-                        <div id="photo_id_inner" style={{ backgroundImage: `url(${user ? user.photoUrl : ""})` }}></div>
+                        <div id="photo_id_inner" style={{ backgroundImage: `url(${user ? user.display_photo : ""})` }}></div>
                     </div>
                     {renderVerification()}
                     <div onClick={() => setScanning(true)} id="start_scan_button">
