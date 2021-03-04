@@ -11,17 +11,20 @@ export default function Security(props) {
         photoUrl: "https://hatrabbits.com/wp-content/uploads/2017/01/random.jpg"
     });
     const [scanning, setScanning] = useState(false);
-    const [url, setUrl] = useState("");
     const canvasContainerRef = useRef();
 
-    useEffect(() => {
-        
-    });
-
     function getScannedData(data) {
-        setUrl(data);
         setScanning(false);
-        console.log(data);
+        
+        fetch("https://vaxx-pass-server.herokuapp.com/api/users/" + data, {
+            method: "GET",
+            mode: "cors"
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data);
+        })
+        .catch(err => console.log(err));
     }
 
     function renderVerification() {

@@ -8,7 +8,7 @@ export default function Login(props) {
     function handleSubmit(e) {
         e.preventDefault();
 
-        const data = {
+        const postData = {
             first_name: "Helios",
             last_name: "Chan",
             user_id: account,
@@ -20,14 +20,14 @@ export default function Login(props) {
             }
         };
 
-        const url = "https://vaxx-pass-server.herokuapp.com/api/user";
+        const url = "https://vaxx-pass-server.herokuapp.com/api/users";
         fetch(url, {
             method: "POST",
             mode: "cors",
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(data)
+            body: JSON.stringify(postData)
         })
         .then(res => res.json())
         .then(data => console.log(data))

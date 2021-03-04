@@ -9,7 +9,7 @@ import User from './components/User';
 import Security from './components/Security';
 
 function App() {
-  const [loggedIn, setLoggedIn] = useState(false);
+  const [loggedIn, setLoggedIn] = useState(true);
 
   function renderRouter() {
     return (
