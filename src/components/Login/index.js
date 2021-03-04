@@ -7,7 +7,7 @@ export default function Login(props) {
 
     function handleSubmit(e) {
         e.preventDefault();
-
+        /*
         const postData = {
             first_name: "Blab",
             last_name: "Nabba",
@@ -36,6 +36,7 @@ export default function Login(props) {
         .catch(err => {
             console.log(err);
         });
+        */
     }
 
     return (
