@@ -34,6 +34,14 @@ export default function Security(props) {
         }
     }
 
+    function renderVisitorName() {
+        if (user) {
+            return (
+                <span id="visitor_name">{user.first_name + " " + user.last_name}</span>
+            );
+        }
+    }
+
     function renderSecurity() {
         if (scanning) {
             return (
@@ -57,6 +65,7 @@ export default function Security(props) {
                         <div id="dummy"></div>
                         <div id="photo_id_inner" style={{ backgroundImage: `url(${user ? user.display_photo : ""})` }}></div>
                     </div>
+                    {renderVisitorName()}
                     {renderVerification()}
                     <div onClick={() => setScanning(true)} id="start_scan_button">
                         <span>Scan</span>

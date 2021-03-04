@@ -91,3 +91,14 @@
     top: -32px;
     display: block;
 }
+
+#visitor_name {
+    font-size: 18px;
+    color: #003766;
+    margin: auto;
+    margin-top: 16px;
+    display: block;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 36px;
+}
