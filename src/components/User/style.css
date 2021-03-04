@@ -1,0 +1,77 @@
+.account_container {
+    padding: 0 16px;
+    box-sizing: border-box;
+}
+
+#nav_top {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    height: 64px;
+    align-items: center;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.sign_out_button {
+    font-size: 15px;
+    color: rgba(0,55,102, 0.9);
+}
+
+#user_info_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#user_full_name {
+    font-size: 16px;
+    font-weight: bold;
+    color: #003766;
+    line-height: 16px;
+    margin-bottom: 2px;
+    margin-top: 8px;
+}
+
+#user_location {
+    color: #003766;
+    font-size: 12px;
+}
+
+.settings_button {
+    font-size: 24px;
+    font-weight: bold;
+    color: #003766;
+    cursor: pointer;
+}
+
+#canvas_container {
+    width: 180px;
+    height: 180px;
+    display: block;
+    margin: auto;
+}
+
+.status_container {
+    text-align: center;
+    margin: auto;
+    margin-top: 18px;
+}
+
+.status_container > span {
+    font-size: 18px;
+    color: #003766;
+    margin-bottom: 10px;
+    display: block;
+}
+
+#verify_image {
+    width: 64px;
+    height: 64px;
+    border: none;
+}
