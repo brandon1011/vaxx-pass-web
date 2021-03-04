@@ -9,15 +9,17 @@ export default function Login(props) {
         e.preventDefault();
 
         const postData = {
-            first_name: "Helios",
-            last_name: "Chan",
+            first_name: "Blab",
+            last_name: "Nabba",
             user_id: account,
             address: {
                 building: "123",
                 coord: [111.1, -57.12],
                 street: "Steeles Ave W",
                 postal_code: "A1B 2C3"
-            }
+            },
+            display_photo: "https://gamasutra.com/db_area/images/news/2018/Jun/320213/supermario64thumb1.jpg",
+            vaccine_verified: false
         };
 
         const url = "https://vaxx-pass-server.herokuapp.com/api/users";
